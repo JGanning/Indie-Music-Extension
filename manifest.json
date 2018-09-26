@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "name": "January Noon Sample Launcher",
+    "description": "Play January Noon originals",
+    "version": "1.0.0",
+    "icons": {"128": "icon_128.png"},
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "permissions": ["activeTab"]
+}
