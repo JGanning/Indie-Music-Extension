@@ -4,8 +4,27 @@ var fillBar = document.getElementById("fill");
 
 var song = new Audio();
 var currentSong = 0;
+song.volume = .4;
 
 var currentTime = document.getElementById("currentTime");
+
+var playButton = document.getElementById("play");
+playButton.onclick = playOrPauseSong;
+
+var prevButton = document.getElementById("pre");
+prevButton.onclick = prev;
+
+var nextButton = document.getElementById("next");
+nextButton.onclick = next;
+
+var soundButton = document.getElementById("sound");
+soundButton.onclick = mute;
+
+var volumeLow = document.getElementById("low");
+volumeLow.onclick = low;
+
+var volumeHigh = document.getElementById("high");
+volumeHigh.onclick = high;
 
 window.onload = (playSong);
 
@@ -101,3 +120,30 @@ function mute()
         $("#sound img").attr("src", "images/mute.png");
     }
 }
+
+function low()
+{
+    if(song.volume <= 0)
+    {
+        song.volume = 0;
+        $("#sound img").attr("src", "images/mute.png");
+    }
+    else{
+        song.volume -= 0.1;
+        $("#sound img").attr("src", "images/sound.png");
+    }
+}
+
+function high()
+{
+    if(song.volume >= 1)
+    {
+        song.volume = 1;
+        $("#sound img").attr("src", "images/sound.png");
+    }
+    else{
+        song.volume += 0.1;
+        $("#sound img").attr("src", "images/sound.png");
+    }
+}
+
